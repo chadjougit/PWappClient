@@ -1,0 +1,51 @@
+<p>
+  transaction works!
+</p>
+
+
+
+
+
+     
+
+COOOOL FORM
+<!--
+  <form [formGroup]="complexForm" (ngSubmit)="click$.next(complexForm.value)">
+    <input formControlName="recipient"
+           [typeahead]="users"
+           (typeaheadOnSelect)="typeaheadOnSelect($event)"
+           [typeaheadOptionsLimit]="7"
+           [typeaheadOptionField]="'name'"
+           [typeaheadMinLength]="0"
+           placeholder="Typeahead inside a form"
+           class="form-control">
+            <input class="form-control" placeholder="Amount" type="text" [formControl]="complexForm.controls['Amount']">
+              <button class="btn btn-default" type="submit">Submit</button>
+  </form>
+ 
+
+         <button (click)="GetAllUsers()">GetAllUsers</button>
+ 
+ -->
+<div class="container-fluid">
+     <div class="col-sm-6 col-sm-offset-3">
+  <form [formGroup]="complexForm" (ngSubmit)="click$.next(complexForm.value)">
+    <input formControlName="recipient"
+           [typeahead]="users"
+           (typeaheadOnSelect)="typeaheadOnSelect($event)"
+           [typeaheadOptionsLimit]="7"
+           [typeaheadOptionField]="'name'"
+           [typeaheadMinLength]="0"
+           placeholder="Typeahead inside a form"
+           class="form-control">
+            <input class="form-control" placeholder="Amount" type="text" [formControl]="complexForm.controls['Amount']">
+              <button class="btn btn-primary center-block" type="submit">Submit</button>
+  </form>
+  </div>
+  </div>
+ 
+
+         <button (click)="GetAllUsers()">GetAllUsers</button>
+
+
+         <button (click)="testTake()">testTake</button>

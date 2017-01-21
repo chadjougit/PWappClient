@@ -1,0 +1,89 @@
+<div class="container-fluid">    
+    <table class="table table-striped table-responsive">
+      <thead>
+        <tr>
+          <th>
+            Id
+          </th>
+          <th>
+            Amount
+          </th>
+          <th>
+            SenderUsername
+          </th>
+          <th>
+            RecipientUsername
+          </th>
+          <th>
+            Date
+          </th>
+          <th>
+        </th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let trans of userData.transactions ">
+        <tr>
+          <td>
+            <div [hidden]="!trans"> {{trans?.Id}} </div>
+          </td>
+          <td>
+            <div [hidden]="!trans"> {{trans?.Amount}} </div>
+          </td>
+          <td>
+            <div [hidden]="!trans"> {{trans?.SenderUsername}} </div>
+          </td>
+          <td>
+            <div [hidden]="!trans"> {{trans?.RecipientUsername}} </div>
+          </td>
+          <td>
+            <div [hidden]="!trans"> {{trans?.Date | date:'medium' }} </div>
+          </td> 
+          <td>
+            <div *ngIf="trans.Amount < 0"> <button (click)="SendTransactionId(trans.Id)">SendTransactionId</button> </div>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+<button (click)="GetTransactions()">GetTransactions</button> {{transaction}} teeest
+
+<button (click)="GetTime()">GetTime</button>
+
+<button (click)="GetTransactionsFromReducer()">GetTransactionsFromReducer</button>
+
+<div class="container">
+  <h2>Striped Rows</h2>
+  <p>The .table-striped class adds zebra-stripes to a table:</p>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+teeest

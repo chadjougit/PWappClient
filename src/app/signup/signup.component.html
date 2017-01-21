@@ -1,0 +1,52 @@
+<p>
+  signup works!
+</p>
+ {{userExits}}
+   <div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+   
+ {{userName}}
+{{testing}}
+
+<div class="jumbotron">
+    <h2>Form with Validations</h2>
+    <form [formGroup]="complexForm" (ngSubmit)="click$.next(complexForm.value)">
+        <label>Login:</label>
+        <input class="form-control" type="text" placeholder="John" [formControl]="complexForm.controls['username']">
+        <div *ngIf="complexForm.controls['username'].hasError('required') && complexForm.controls['username'].touched" class="alert alert-danger">You must include email.</div>
+           <div *ngIf="complexForm.controls['username'].hasError('email')" class="alert alert-danger">You must include a valid email!.</div>
+         <div *ngIf="userName">
+        <div class="alert alert-danger" role="alert">
+          
+        {{userName}}
+        </div>
+        
+        </div>
+        <br />
+      
+        <!-- The hasError method will tell us if a particular error exists -->
+     
+        <label>Password</label>
+        <input class="form-control" type="text" placeholder="Doe" [formControl]="complexForm.controls['password']">
+        <div *ngIf="complexForm.controls['password'].hasError('minlength') && complexForm.controls['password'].touched" class="alert alert-danger">Your password must be at least 6 characters long.</div>
+
+        <label>Retype Password</label>
+        <input class="form-control" type="text" placeholder="Doe" [formControl]="complexForm.controls['passwordCheck']">
+        <div *ngIf="complexForm.hasError('mismatchedPasswords') && complexForm.controls['passwordCheck'].touched" class="alert alert-danger">Need Match!</div>
+
+
+        <!-- The hasError method can work with the built in validators but custom validators as well -->
+         <label>Name</label>
+       <input class="form-control" type="text" placeholder="Doe" [formControl]="complexForm.controls['name']">
+ <div *ngIf="complexForm.controls['name'].hasError('minlength') && complexForm.controls['name'].touched" class="alert alert-danger">Your name > 2 symbols.</div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary center-block" [disabled]="!complexForm.valid">Submit</button>
+      </div>
+    </form>
+  </div>
+
+
+
+    </div>
+  </div>

@@ -1,3 +1,61 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button aria-expanded="false" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-2" type="button">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a [routerLink]="['/Home']" routerLinkActive="active" [routerLink]="['/Home']" routerLinkActive="active" class="navbar-brand"
+        href="#">Home</a>
+    </div>
+    <div style="height: 1px;" aria-expanded="false" class="navbar-collapse collapse" id="navbar-collapse-2">
+      <ul class="nav navbar-nav">
+        <li *ngIf="signedIn" [routerLink]="['/History']" routerLinkActive="active"><a role="button">History</a></li>
+        <li *ngIf="signedIn" [routerLink]="['/Transaction']" routerLinkActive="active"><a role="button">Transaction</a></li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a  *ngIf="signedIn" (click)="Logout()">Logout</a></li>
+        <form class="navbar-form">     
+         <form  *ngIf="!signedIn" [formGroup]="complexForm" (ngSubmit)="click$.next(complexForm.value)">
+          <input class="form-control" placeholder="login" type="text" [formControl]="complexForm.controls['login']">
+            <input class="form-control" placeholder="password" type="text" [formControl]="complexForm.controls['password']">
+        <button class="btn btn-default" type="submit">Submit</button>
+          </form>
+         
+        </form>
+
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+</nav>
+
+
 <h1>
   {{title}}
 </h1>
+<button (click)="navigateHome()">navigateHome</button>
+<button (click)="navigateTestLogin()">navigateTestLogin</button>
+<button (click)="navigateTestValues()">navigateTestValues</button>
+<button (click)="navigatesignup()">navigatesignup</button>
+<button (click)="navigateTransaction()">navigateTransaction</button>
+<button (click)="navigateHistory()">navigateHistory</button>
+
+<button (click)="DeleteThisBehSubscriber()">DeleteThisBehSubscriber</button>
+
+{{signedIn}}
+
+{{deletethisvalue}}
+
+
+
+
+tteeeeest
+
+<button (click)="uns()">uns</button>
+
+<button (click)="GetAmount()">GetAmount</button> AMount {{userData.amount}} AMount
+
+<router-outlet></router-outlet>
